@@ -1,5 +1,9 @@
 package extras;
 
+import java.awt.geom.Ellipse2D;
+
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class ObedientRobot {		
@@ -8,11 +12,39 @@ public class ObedientRobot {
 	public static void main(String[] args) {
 		kev.setPenWidth(10);
 			kev.penDown();
-			kev.setSpeed(10);
+			kev.setSpeed(100);
+			String answer = JOptionPane.showInputDialog("What shape would you like");
+						String color = JOptionPane.showInputDialog("Which color would you like");
+if (answer.equalsIgnoreCase("square")) {
+			drawSquare();
+			}else if(answer.equalsIgnoreCase("triangle")) {
+				drawTriangle();
+			}else if(answer.equalsIgnoreCase("circle")){
+				drawCircle();
+			}else {
+		JOptionPane.showMessageDialog(null, "Sorry, i don't remember that shape");
+	}			
+
+			if (color.equalsIgnoreCase("red")) {
+				kev.setPenColor(255, 0, 0);
+			}
+				else if (color.equalsIgnoreCase("blue")) {
+					kev.setPenColor(0, 0, 255);	
+			}
+				else if (color.equalsIgnoreCase("green")) {
+					kev.setPenColor(0, 128, 0);	
+			}
+				else if (color.equalsIgnoreCase("yellow")) {
+					kev.setPenColor(255, 255, 0);	
+			}else {
+				JOptionPane.showMessageDialog(null, "Sorry, i don't remember that shape");
+			}				
 			drawSquare();
 		drawTriangle();
 		drawCircle();
-	}
+	
+			}
+	
 
 	static void drawSquare() {
 		
@@ -33,6 +65,7 @@ public class ObedientRobot {
 		}
 	}
 	static void drawCircle() {
-			kev.
+		kev.turn(1);
 		}	
 }
+
